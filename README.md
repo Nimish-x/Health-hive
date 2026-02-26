@@ -15,7 +15,7 @@
     <i>An <b>intelligent agent</b> designed to optimize patient routing during <b>mass casualty incidents</b> in dense urban environments (e.g., Mumbai). Ensuring patients reach the fastest available care, not just the closest hospital.</i>
   </p>
 
-  **[Developed for the MumbaiHacks Hackathon 🧠💡]**
+  **[🏆 Developed for the MumbaiHacks Hackathon]**
 </div>
 
 <br />
@@ -24,69 +24,83 @@
 
 During a large-scale emergency, the default approach of sending all patients to the nearest hospital creates a **critical bottleneck**:
 
-- ⚠️ The closest facility becomes **overwhelmed**, leading to long wait times.
-- 📉 Nearby alternate hospitals remain **underutilized**.
-- 🚑 The result: delayed critical care and **avoidable fatalities**.
+- ⚠️ **The Immediate Crisis:** The closest facility becomes **overwhelmed**, leading to severe congestion in triage and long wait times for life-saving care.
+- 📉 **The Inefficiency:** Nearby alternate hospitals with available beds and specialized staff often remain **underutilized** simply because they were slightly further away geographically.
+- 🚑 **The Result:** Delayed critical care and **avoidable fatalities**.
 
-Urban healthcare networks lack real-time, city-wide coordination — that’s where our **AI Emergency Load Balancer** comes in.
+Urban healthcare networks lack real-time, city-wide coordination. Traditional dispatch systems are reactive. That’s where our **AI Emergency Load Balancer** steps in to make the network proactive.
 
 ---
 
 ## 🤖 Our Solution: An Agentic AI Coordinator
 
-The system functions as an **autonomous emergency coordinator** following a modern **Sense–Think–Act** cycle:
+The system functions as an **autonomous emergency coordinator** orchestrating resources city-wide. It operates on a continuous **Sense–Think–Act** loop:
 
-### 🧠 SENSE
-Monitors real-time data from hospitals across the city, including:
-- **Bed occupancy** (ICU, Wards)
-- **Staff availability** (Surgeons, Nurses)
-- **Specialty care units** (e.g., trauma, burn, cardiac units)
+### 🧠 SENSE (Real-time Telemetry)
+HealthHIVE constantly ingests and monitors live data streams from hospitals across the city network:
+- **Bed Occupancy:** General wards, ICUs, and specialized recovery rooms.
+- **Staff Availability:** Tracking surgeons, nurses, and specialized trauma teams on shift.
+- **Specialty Units:** Live status of trauma centers, burn units, and cardiac care facilities.
 
-### 🤔 THINK
-Predicts and plans using state-of-the-art AI:
-- An **XGBoost model** forecasts future ER wait times dynamically.
-- A proprietary **optimization algorithm** computes a `Time-to-Treatment` score — perfectly balancing ambulance travel time with predicted hospital waiting time.
+### 🤔 THINK (Predictive ML Engine)
+The core intelligence predicts and plans using state-of-the-art machine learning:
+- **Forecasting:** An **XGBoost model** analyzes historical and current data to forecast future ER wait times.
+- **Smart Routing:** A proprietary **optimization algorithm** computes a dynamic `Time-to-Treatment` score. It perfectly balances the *ambulance travel time* against the *predicted hospital waiting time* to find the true fastest path to care.
 
-### 🚑 ACT
+### 🚑 ACT (Execution & Dispatch)
 Executes dynamic routing and load balancing:
-- Suggests **optimized ambulance dispatch routes**.
-- **Notifies hospitals** in advance to prep specialized teams.
-- Proactively allocates resources to prevent system bottlenecks before they even form.
+- **Optimized Dispatch:** Suggests alternate, faster routes bypassing congested local hubs.
+- **Pre-Arrival Alerts:** Notifies receiving hospitals in advance so specialized teams can prep for incoming cases.
+- **Proactive Balancing:** Dynamically redirects flow to distribute the load evenly across the healthcare grid, preventing operational bottlenecks before they form.
 
 ---
 
-## 🛠️ Tech Stack Architecture
+## 🛠️ System Architecture & Tech Stack
 
-**Backend Engine ⚙️**
-- **Framework:** Python / Flask
+HealthHIVE is built on a decoupled, highly responsive architecture designed for high availability during critical events.
+
+### **Backend Engine ⚙️**
+The backend serves as the brain, processing the heavy ML models and managing the complex state of the city's hospital network.
+- **Framework:** Python / Flask (Chosen for speed of iteration and ML ecosystem integration)
 - **Machine Learning & AI:** Scikit-learn, Pandas, NumPy, XGBoost
-- **Core Processing Logic:** Python Subprocess & JSON parsers for complex orchestration
+- **Core Processing Logic:** Python Subprocess & JSON parsers for orchestrating prediction tasks asynchronously.
 
-**Frontend Dashboard 💻**
+### **Frontend Dashboard 💻**
+The frontend is built for incident commanders and dispatchers, requiring real-time updates without page reloads.
 - **Framework:** React.js
-- **Build Tool:** Vite for lightning-fast HMR and compilation
-- **API Client:** Axios
-- **UI & Styling:** Custom modular CSS
+- **Build Tool:** Vite (Lightning-fast HMR and optimized production compilation)
+- **State & Data Management:** Axios for robust API polling.
+- **UI & Styling:** Custom modular CSS designed for high contrast and readability in high-stress control rooms.
 
 ---
 
-## 📸 System Previews
+## 📸 System Previews & Features
+
+Explore the various interfaces of the HealthHIVE command center.
 
 <details>
-<summary><b>Click to expand screenshots</b></summary>
+<summary><b>Click here to expand the gallery of screenshots</b></summary>
 <br>
 
-| Dashboard Analytics | Routing Interface |
-|:---:|:---:|
-| <img alt="Dashboard Overview" src="https://github.com/user-attachments/assets/cb9899fe-10c5-4712-aee0-edc0562ecad6" width="100%"> | <img alt="Routing interface" src="https://github.com/user-attachments/assets/3e372aac-f53e-4af4-ad15-46554b51d26d" width="100%"> |
+**1. Main Dashboard & Analytics**  
+*Overview of city-wide strain and incoming incidents.*
+<img alt="Dashboard Overview" src="https://github.com/user-attachments/assets/cb9899fe-10c5-4712-aee0-edc0562ecad6" width="100%">
 
-| Notification Center | Live Mapping |
-|:---:|:---:|
-| <img alt="Notification Interface" src="https://github.com/user-attachments/assets/5077ee85-3ea7-4f8c-9e1a-23f67a7449ee" width="100%"> | <img alt="Map Data" src="https://github.com/user-attachments/assets/32ef97ba-0a77-47c0-a108-7ba6cb636c15" width="100%"> |
+**2. Intelligent Routing Interface**  
+*The AI suggesting the fastest `Time-to-Treatment` path.*
+<img alt="Routing interface" src="https://github.com/user-attachments/assets/3e372aac-f53e-4af4-ad15-46554b51d26d" width="100%">
 
-| Real-Time Resource Feed |
-|:---:|
-| <img alt="Live Feed" src="https://github.com/user-attachments/assets/1979e310-d947-4c0b-abfc-c8f62b8efe96" width="100%"> |
+**3. Hospital Notification Center**  
+*Alerts received by the hospital to prepare trauma teams.*
+<img alt="Notification Interface" src="https://github.com/user-attachments/assets/5077ee85-3ea7-4f8c-9e1a-23f67a7449ee" width="100%">
+
+**4. Live Geographical Mapping**  
+*Visualizing the spread of incidents across the grid.*
+<img alt="Map Data" src="https://github.com/user-attachments/assets/32ef97ba-0a77-47c0-a108-7ba6cb636c15" width="100%">
+
+**5. Real-Time Resource Feed**  
+*Live data stream of resource utilization.*
+<img alt="Live Feed" src="https://github.com/user-attachments/assets/1979e310-d947-4c0b-abfc-c8f62b8efe96" width="100%">
 
 </details>
 
@@ -94,17 +108,17 @@ Executes dynamic routing and load balancing:
 
 ## 👥 Meet the Team (Data Dabbawalas)
 
-Brought to life at **MumbaiHacks** by **Team Data Dabbawalas**:
+Brought to life at **MumbaiHacks** by **Team Data Dabbawalas**. We are passionate about using data and AI to solve critical physical-world problems.
+
 - **Nimish Tilwani**
 - **Karan Tulsani**
 - **Ved Dange**
 - **Dhananjay Yadav**
 
-
-*Special thanks to the hackathon organizers and mentors for their incredible guidance and support throughout the event.*
+*Special thanks to the hackathon organizers and mentors for their incredible guidance and support throughout the 24-hour build sprint!*
 
 ---
 
 <div align="center">
-  <i>⚙️ AI that saves lives — optimizing emergency response, one decision at a time.</i>
+  <i>⚙️ <b>HealthHIVE:</b> AI that saves lives — optimizing emergency response, one decision at a time.</i>
 </div>
